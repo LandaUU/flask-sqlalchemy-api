@@ -1,0 +1,468 @@
+{
+	"info": {
+		"_postman_id": "377e98a8-c73c-4d33-8c58-f67f20b1402c",
+		"name": "Flask-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Flask-GetEmployee",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "P@ss",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Flask-Rollback",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "P@ss",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/rollback/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"rollback",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Flask-Fill",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/fill",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"fill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Flask-AddEmployee",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "P@ss",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentId\": 2\r\n        },\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"Test2\",\r\n        \"LastName\": \"Test2\",\r\n        \"MiddleName\": \"Test2\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/add_employee/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"add_employee",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Flask-AddEmployee-NewDepartment",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "P@ss",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentName\": \"{{$randomJobType}}\"\r\n        },\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"Test2\",\r\n        \"LastName\": \"Test2\",\r\n        \"MiddleName\": \"Test2\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/add_employee/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"add_employee",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Flask-AddEmployee-InvalidSchema",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "P@ss",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"Test2\",\r\n        \"LastName\": \"Test2\",\r\n        \"MiddleName\": \"Test2\",\r\n        \"DepartmentId\": 10\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/add_employee/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"add_employee",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Flask-UpdateEmployee",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"Birthday\": \"2000-01-01T00:00:00\",\r\n        \"EmploymentDate\": \"2022-02-02T00:00:00\",\r\n        \"FirstName\": \"Test\",\r\n        \"LastName\": \"Test\",\r\n        \"MiddleName\": \"Test\",\r\n        \"DepartmentName\": \"TestDepartment\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/edit_employee/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"edit_employee",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Flask-UpdateEmployees",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "P@ss",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    [{\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentId\": 2,\r\n            \"DepartmentName\": \"Test department 1\"\r\n        },\r\n        \"EmployeeId\": 1,\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"{{$randomFirstName}}\",\r\n        \"LastName\": \"{{$randomLastName}}\",\r\n        \"MiddleName\": \"Ivanovich\"\r\n    },\r\n    {\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentId\": 4,\r\n            \"DepartmentName\": \"Test department\"\r\n        },\r\n        \"EmployeeId\": 4,\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"{{$randomFirstName}}\",\r\n        \"LastName\": \"{{$randomLastName}}\",\r\n        \"MiddleName\": \"Sergeevich\"\r\n    }]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/edit_employees/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"edit_employees",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Flask-UpdateEmployees-NewDepartments",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "P@ss",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    [{\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentName\": \"{{$randomJobType}}\"\r\n        },\r\n        \"EmployeeId\": 1,\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"{{$randomFirstName}}\",\r\n        \"LastName\": \"{{$randomLastName}}\",\r\n        \"MiddleName\": \"Ivanovich\"\r\n    },\r\n    {\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentName\": \"{{$randomJobType}}\"\r\n        },\r\n        \"EmployeeId\": 4,\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"{{$randomFirstName}}\",\r\n        \"LastName\": \"{{$randomLastName}}\",\r\n        \"MiddleName\": \"Sergeevich\"\r\n    }]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/edit_employees/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"edit_employees",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Flask-UpdateEmployees-InvalidSchema",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "P@ss",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    [{\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentId\": 2,\r\n            \"DepartmentName\": \"Test department 1\"\r\n        },\r\n        \"EmployeeId\": 3,\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"Test00\",\r\n        \"LastName\": \"Test00\",\r\n        \"MiddleName\": \"Test00\"\r\n    },\r\n    {\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"EmployeeId\": 4,\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"Test00\",\r\n        \"LastName\": \"Test00\",\r\n        \"MiddleName\": \"Test00\"\r\n    }]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/edit_employees/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"edit_employees",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
