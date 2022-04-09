@@ -154,7 +154,8 @@ def fill_tables():
     Добавление тестовых данных в бд
     """
     db.create_all()
-    user = User("test20", "test20@mail.ru", "P@ss")
+    db.session.commit()
+    user = User("test", "test@mail.ru", "P@ss")
     db.session.add(user)
     print(f"Пользователь username: {user.username} добавлен")
     department = Department("Test department")
@@ -172,7 +173,6 @@ def add_request(user_id):
     Добавление записи о запросе в бд
     :param user_id: ID пользователя в бд
     """
-    db.create_all()
     request = EntityRequest(user_id)
     db.session.add(request)
     db.session.commit()

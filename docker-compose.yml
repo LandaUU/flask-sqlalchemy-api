@@ -1,7 +1,7 @@
 version: '3.10'
 
 services:
- web:
+ api:
   build:
    context: .
   ports:
@@ -10,9 +10,7 @@ services:
   - ./:/app
 
  db:
-     image: "mcr.microsoft.com/mssql/server"
+     build:
+       context: ./mssql-docker-config
      ports:
       - 1433:1433
-     environment:
-         SA_PASSWORD: "P@ssw0rd!"
-         ACCEPT_EULA: "Y"

@@ -165,7 +165,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentId\": 2\r\n        },\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"Test2\",\r\n        \"LastName\": \"Test2\",\r\n        \"MiddleName\": \"Test2\"\r\n    }",
+					"raw": "    {\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentId\": 1\r\n        },\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"Test2\",\r\n        \"LastName\": \"Test2\",\r\n        \"MiddleName\": \"Test2\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -213,7 +213,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentName\": \"{{$randomJobType}}\"\r\n        },\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"Test2\",\r\n        \"LastName\": \"Test2\",\r\n        \"MiddleName\": \"Test2\"\r\n    }",
+					"raw": "    {\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentName\": \"{{$randomJobType}}\"\r\n        },\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"{{$randomFirstName}}\",\r\n        \"LastName\": \"{{$randomLastName}}\",\r\n        \"MiddleName\": \"Test\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -288,39 +288,6 @@
 			"response": []
 		},
 		{
-			"name": "Flask-UpdateEmployee",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "    {\r\n        \"Birthday\": \"2000-01-01T00:00:00\",\r\n        \"EmploymentDate\": \"2022-02-02T00:00:00\",\r\n        \"FirstName\": \"Test\",\r\n        \"LastName\": \"Test\",\r\n        \"MiddleName\": \"Test\",\r\n        \"DepartmentName\": \"TestDepartment\"\r\n    }",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://127.0.0.1:5000/api/edit_employee/2",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"edit_employee",
-						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Flask-UpdateEmployees",
 			"request": {
 				"auth": {
@@ -342,7 +309,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "    [{\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentId\": 2,\r\n            \"DepartmentName\": \"Test department 1\"\r\n        },\r\n        \"EmployeeId\": 1,\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"{{$randomFirstName}}\",\r\n        \"LastName\": \"{{$randomLastName}}\",\r\n        \"MiddleName\": \"Ivanovich\"\r\n    },\r\n    {\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentId\": 4,\r\n            \"DepartmentName\": \"Test department\"\r\n        },\r\n        \"EmployeeId\": 4,\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"{{$randomFirstName}}\",\r\n        \"LastName\": \"{{$randomLastName}}\",\r\n        \"MiddleName\": \"Sergeevich\"\r\n    }]",
+					"raw": "    [{\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentId\": 1,\r\n            \"DepartmentName\": \"Test department 1\"\r\n        },\r\n        \"EmployeeId\": 1,\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"{{$randomFirstName}}\",\r\n        \"LastName\": \"{{$randomLastName}}\",\r\n        \"MiddleName\": \"Ivanovich\"\r\n    },\r\n    {\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentId\": 2,\r\n            \"DepartmentName\": \"Test department\"\r\n        },\r\n        \"EmployeeId\": 2,\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"{{$randomFirstName}}\",\r\n        \"LastName\": \"{{$randomLastName}}\",\r\n        \"MiddleName\": \"Sergeevich\"\r\n    }]",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -390,7 +357,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "    [{\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentName\": \"{{$randomJobType}}\"\r\n        },\r\n        \"EmployeeId\": 1,\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"{{$randomFirstName}}\",\r\n        \"LastName\": \"{{$randomLastName}}\",\r\n        \"MiddleName\": \"Ivanovich\"\r\n    },\r\n    {\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentName\": \"{{$randomJobType}}\"\r\n        },\r\n        \"EmployeeId\": 4,\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"{{$randomFirstName}}\",\r\n        \"LastName\": \"{{$randomLastName}}\",\r\n        \"MiddleName\": \"Sergeevich\"\r\n    }]",
+					"raw": "    [{\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentName\": \"{{$randomJobType}}\"\r\n        },\r\n        \"EmployeeId\": 1,\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"{{$randomFirstName}}\",\r\n        \"LastName\": \"{{$randomLastName}}\",\r\n        \"MiddleName\": \"Ivanovich\"\r\n    },\r\n    {\r\n        \"Birthday\": \"2000-01-02T00:00:00\",\r\n        \"Department\": {\r\n            \"DepartmentName\": \"{{$randomJobType}}\"\r\n        },\r\n        \"EmployeeId\": 2,\r\n        \"EmploymentDate\": \"2020-08-07T00:00:00\",\r\n        \"FirstName\": \"{{$randomFirstName}}\",\r\n        \"LastName\": \"{{$randomLastName}}\",\r\n        \"MiddleName\": \"Sergeevich\"\r\n    }]",
 					"options": {
 						"raw": {
 							"language": "json"
