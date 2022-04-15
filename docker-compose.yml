@@ -1,4 +1,4 @@
-version: '3.10'
+version: '3.3'
 
 services:
  api:
@@ -14,3 +14,22 @@ services:
        context: ./mssql-docker-config
      ports:
       - 1433:1433
+     environment:
+       - SA_PASSWORD=PHxvf8TEKtrK
+       - ACCEPT_EULA=Y
+       - MSSQL_PID=Developer
+     command:
+       - /bin/bash
+       - -c
+       - |
+         # Launch MSSQL and send to background
+         /opt/mssql/bin/sqlservr &
+         sleep 15
+         # Run every script in /scripts
+         # TODO set a flag so that this is only done once on creation, 
+         #      and not every time the container runs
+         for foo in *.sql
+           do /opt/mssql-tools/bin/sqlcmd -U sa -P $$SA_PASSWORD -d master -l 30 -e -i $$foo
+         done
+         # So that the container doesn't shut down, sleep this thread
+         sleep infinity
